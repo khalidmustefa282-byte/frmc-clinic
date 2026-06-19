@@ -2707,6 +2707,7 @@ async function saveTx(){
   var name=customNm||((G('tx-name')&&G('tx-name').value)||'').trim();
   if(!name){toast('Select or enter a treatment name','err');return;}
   var cost=parseFloat((G('tx-cost')&&G('tx-cost').value)||0)||parseFloat((G('tx-cprice')&&G('tx-cprice').value)||0)||0;
+  if(!cost||cost<=0){toast('Please select a treatment/procedure or enter a cost greater than 0','err');return;}
   var rec=DB.receptions.find(function(r){return r.id===recId||r._bid===recId;});
   var cfg=DEPTMETA[dk];
   var _dM={'Dental Department':'Dental','Hemorrhoid Department':'Hemorrhoid','Medical Department':'Medical'};
