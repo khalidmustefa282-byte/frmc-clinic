@@ -2720,7 +2720,7 @@ async function saveTx(){
       consultation_id:  recId,
       department:       deptShort,
       treatment_name:   name,
-      treatment_cost:   cost,
+      cost:   cost,
       currency:         (G('tx-cur')&&G('tx-cur').value)||'SSP',
       treatment_date:   (G('tx-date')&&G('tx-date').value)||today(),
       status:           (G('tx-status')&&G('tx-status').value)||'planned',
